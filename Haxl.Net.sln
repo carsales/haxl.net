@@ -1,0 +1,39 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 14
+VisualStudioVersion = 14.0.23107.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Haxl.Net", "Haxl.Net\Haxl.Net.csproj", "{3DEBB158-045A-477D-BC9C-3D2B93B362E0}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Haxl.Net.Tests", "Haxl.Net.Tests\Haxl.Net.Tests.csproj", "{AE40F804-D523-4820-949D-D3FF9AB4A216}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Build", "Build", "{C50E15F9-BCD2-4246-B7DF-564407FD08F7}"
+	ProjectSection(SolutionItems) = preProject
+		build.bat = build.bat
+		build.fsx = build.fsx
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{8E6EF9A5-2106-41ED-A54E-2107B6FE85D1}"
+	ProjectSection(SolutionItems) = preProject
+		README.md = README.md
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{3DEBB158-045A-477D-BC9C-3D2B93B362E0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3DEBB158-045A-477D-BC9C-3D2B93B362E0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3DEBB158-045A-477D-BC9C-3D2B93B362E0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3DEBB158-045A-477D-BC9C-3D2B93B362E0}.Release|Any CPU.Build.0 = Release|Any CPU
+		{AE40F804-D523-4820-949D-D3FF9AB4A216}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AE40F804-D523-4820-949D-D3FF9AB4A216}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AE40F804-D523-4820-949D-D3FF9AB4A216}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AE40F804-D523-4820-949D-D3FF9AB4A216}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

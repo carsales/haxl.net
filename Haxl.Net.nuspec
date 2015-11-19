@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<package xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <metadata xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">    
+    <id>Haxl.Net</id>
+    <version>@build.number@</version>
+    <authors>Carsales.com.au</authors>
+    <owners>Carsales.com.au</owners>
+    <summary>
+        And implementation of the Haxl library for .net - provides an async applicative and an async monad implementation.
+    </summary>
+    <licenseUrl>https://github.com/carsales/haxl.net/blob/master/LICENSE.txt</licenseUrl>
+    <projectUrl>https://github.com/carsales/haxl.net</projectUrl>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <description>Haxl.net provides a simple API to use to handle concurrent completion of tasks.</description>
+    <releaseNotes>@releaseNotes@</releaseNotes>
+    <copyright>Copyright GitHub 2013</copyright>    
+    <tags>GitHub API Octokit</tags>
+    @dependencies@
+    @references@
+  </metadata>
+  @files@
+</package>
