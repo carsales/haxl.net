@@ -12,7 +12,7 @@ let packagingDir = "./nuget/"
 let version =
   let major = 0
   let minor = 1
-  let revision = 0
+  let revision = 1
   let build = 0
   sprintf "%d.%d.%d.%d" major minor revision build
 

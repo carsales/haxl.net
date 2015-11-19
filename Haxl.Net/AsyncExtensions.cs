@@ -15,6 +15,9 @@ namespace Haxl.Net
             return project(a, b);
         }
 
+        public static Task<B> Select<A, B>(this Task<A> task, Func<A, B> map) =>
+            task.Run().ContinueWith(t => map(t.Result), TaskContinuationOptions.OnlyOnRanToCompletion);
+
         public static Task<A> Where<A>(this Task<A> task, Expression<Func<A, bool>> predicate) =>
             task.Run().ContinueWith(t =>
             {

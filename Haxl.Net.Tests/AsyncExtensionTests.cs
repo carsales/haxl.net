@@ -19,7 +19,7 @@ namespace Haxl.Net.Tests
                 from x in Task.FromResult(10)
                 from y in Task.FromResult(10)
                 select x + y
-            );
+                );
 
             Assert.That(actual, Is.EqualTo(expected));
         }
@@ -34,7 +34,7 @@ namespace Haxl.Net.Tests
                 where x > 0
                 from y in Task.FromResult(10)
                 select x + y
-            );
+                );
 
             Assert.That(actual, Is.EqualTo(expected));
         }
@@ -44,7 +44,7 @@ namespace Haxl.Net.Tests
         {
             var expected = 20;
 
-            var task = 
+            var task =
                 from x in Task.FromResult(10)
                 where x < 0
                 from y in Task.FromResult(10)
@@ -81,20 +81,24 @@ namespace Haxl.Net.Tests
                 from x in new Task<int>(() => 10, cancellation.Token)
                 from y in new Task<int>(() => 10, cancellation.Token)
                 select x + y
-            );
+                );
 
             sw.Stop();
-            
+
             Assert.That(actual, Is.EqualTo(expected));
             Assert.That(sw.ElapsedMilliseconds, Is.LessThan(failureWindow));
         }
-        
+
 
         [Test]
         public async void SelectMany_Exceptions()
         {
-            var runner = 
-                from x in Task.Factory.StartNew<int>(() => { Thread.Sleep(100); throw new Exception("X"); })
+            var runner =
+                from x in Task.Factory.StartNew<int>(() =>
+                {
+                    Thread.Sleep(100);
+                    throw new Exception("X");
+                })
                 from y in Task.Factory.StartNew<int>(() => { throw new Exception("Y"); })
                 select x + y;
 
@@ -107,6 +111,26 @@ namespace Haxl.Net.Tests
             {
                 Assert.That(e.Message, Is.EqualTo("X"));
             }
+        }
+
+        [Test]
+        public async void Select_Happy()
+        {
+            var expected = 20;
+
+            var actual = await Task.FromResult(10).Select(x => x*2);
+
+            Assert.That(actual, Is.EqualTo(expected));
+        }
+
+        [Test]
+        public void Select_Unhappy()
+        {
+            var expected = 20;
+
+            var actual = Task.Run(() => {throw new Exception("Boo"); return 10;}).Select(x => x * 2);
+
+            Assert.Throws<AggregateException>(() => actual.Wait(100));
         }
     }
 }
